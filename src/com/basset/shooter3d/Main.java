@@ -29,7 +29,8 @@ public class Main extends HvlTemplateI{
 	IDX_FLOOR_TECH2 = 1,
 	IDX_FLOOR_ROCK = 2,
 	IDX_FLOOR_ROCK2 = 3,
-	IDX_FONT = 4;
+	IDX_FONT = 4,
+	IDX_CROSSHAIR = 5;
 
 	public Main(){
 		super(new HvlDisplayWindowed(144, (int)WINDOW_WIDTH, (int)WINDOW_HEIGHT, "SHOOTER 3D", false), Long.MAX_VALUE - HvlPainter.LAUNCH_CODE_RAW, Long.MAX_VALUE - 1);
@@ -42,6 +43,7 @@ public class Main extends HvlTemplateI{
 		hvlLoad("Floor_Rock.png");
 		hvlLoad("Floor_Rock2.png");
 		hvlLoad("Font.png");
+		hvlLoad("crosshair.png");
 
 		Game.initialize();
 
