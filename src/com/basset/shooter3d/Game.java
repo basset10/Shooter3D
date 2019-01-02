@@ -66,7 +66,7 @@ public class Game {
 			});
 		});
 		//Draw Crosshair
-				hvlDraw3(hvlQuad3c(0, 0, -1, 0.04f, 0.04f, HvlNormal3.AXIS_Z), hvlTexture(Main.IDX_CROSSHAIR));
+				hvlDraw3(hvlQuad3c(0, 0, -1, 0.045f, 0.045f, HvlNormal3.AXIS_Z), hvlTexture(Main.IDX_CROSSHAIR));
 				
 	}
 	
