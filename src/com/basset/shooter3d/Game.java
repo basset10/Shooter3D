@@ -1,6 +1,7 @@
 package com.basset.shooter3d;
 
 import static com.osreboot.ridhvl2.HvlStatics.hvlColor;
+import static com.osreboot.ridhvl2.HvlStatics.hvlTexture;
 import static com.osreboot.ridhvl2.HvlStatics3.hvlDraw3;
 import static com.osreboot.ridhvl2.HvlStatics3.hvlQuad3c;
 
@@ -49,8 +50,6 @@ public class Game {
 
 	public static void update(float delta){
 		
-		hvlDraw3(hvlQuad3c(0, 0, -1, 0.01f, 0.01f, HvlNormal3.AXIS_Z), hvlColor(1f, 0.5f, 0.1f));
-		
 		rotate(new HvlCoord3(), Player.rot.x, new HvlCoord3(1f, 0f, 0f), () -> {
 			rotate(new HvlCoord3(),  Player.rot.y, new HvlCoord3(0f, 1f, 0f), () -> {
 				rotate(new HvlCoord3(),  Player.rot.z, new HvlCoord3(0f, 0f, 1f), () -> {
@@ -64,6 +63,9 @@ public class Game {
 				});
 			});
 		});
+		//Draw Crosshair
+				hvlDraw3(hvlQuad3c(0, 0, -1, 0.045f, 0.045f, HvlNormal3.AXIS_Z), hvlTexture(Main.IDX_CROSSHAIR));
+				
 	}
 	
 	private static void rotate(HvlCoord3 coordArg, float degreesArg, HvlCoord3 axisArg, HvlAction.A0 actionArg){
