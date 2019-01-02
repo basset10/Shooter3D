@@ -16,6 +16,7 @@ public class Player {
 	GRAVITY = 190f,
 	COLLISION_RADIUS = 10f,
 	MOVESPEED = 200f,
+	MOVESPEED_FAST = 2000f,
 	LOOKSPEED = 0.1f,
 	JUMPSPEED = 200f,
 	VIEW_HEIGHT = 32f;
@@ -44,10 +45,12 @@ public class Player {
 
 		HvlCoord input = new HvlCoord();
 
-		if(Keyboard.isKeyDown(Keyboard.KEY_A)) input.x -= MOVESPEED;
-		if(Keyboard.isKeyDown(Keyboard.KEY_D)) input.x += MOVESPEED;
-		if(Keyboard.isKeyDown(Keyboard.KEY_W)) input.y -= MOVESPEED;
-		if(Keyboard.isKeyDown(Keyboard.KEY_S)) input.y += MOVESPEED;
+		float speed = Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) ? MOVESPEED_FAST : MOVESPEED;
+		
+		if(Keyboard.isKeyDown(Keyboard.KEY_A)) input.x -= speed;
+		if(Keyboard.isKeyDown(Keyboard.KEY_D)) input.x += speed;
+		if(Keyboard.isKeyDown(Keyboard.KEY_W)) input.y -= speed;
+		if(Keyboard.isKeyDown(Keyboard.KEY_S)) input.y += speed;
 
 		if(Keyboard.isKeyDown(Keyboard.KEY_SPACE)){
 			if(!hasJumped){
