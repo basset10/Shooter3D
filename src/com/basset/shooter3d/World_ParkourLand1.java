@@ -12,13 +12,35 @@ public class World_ParkourLand1 {
 		ArrayList<Volume> world = new ArrayList<>();
 
 		//baseplate
-		for(float x = -1000; x < 1000; x += 100){
-			for(float y = -1000; y < 1000; y += 100){
+		for(float x = -1100; x < 1100; x += 100){
+			for(float y = -1100; y < 1100; y += 100){
 				world.add(new Volume(0, x, y - 500, 100, 100, 
 						Math.random() < 0.95f ? Main.IDX_FLOOR_ROCK : Main.IDX_FLOOR_ROCK2));
 			}
 		}
+		
+		//scenery
+		world.addAll(generateJumpChain(0, 
+				new HvlCoord3(-1000, -500, -1500), 
+				new HvlCoord3(1000, -500, -1500), 
+				20, new HvlCoord3(0f, 100f, 0f), 100f, 0f, Main.IDX_FLOOR_TECH));
+		
+		world.addAll(generateJumpChain(0, 
+				new HvlCoord3(-1000, -500, 500), 
+				new HvlCoord3(1000, -500, 500), 
+				20, new HvlCoord3(0f, 100f, 0f), 100f, 0f, Main.IDX_FLOOR_TECH));
+		
+		world.addAll(generateJumpChain(0, 
+				new HvlCoord3(-1000, -500, -1500), 
+				new HvlCoord3(-1000, -500, 500), 
+				20, new HvlCoord3(0f, 100f, 0f), 100f, 0f, Main.IDX_FLOOR_TECH));
+		
+		world.addAll(generateJumpChain(0, 
+				new HvlCoord3(1000, -500, -1500), 
+				new HvlCoord3(1000, -500, 500), 
+				20, new HvlCoord3(0f, 100f, 0f), 100f, 0f, Main.IDX_FLOOR_TECH));
 
+		//tower part 1
 		world.add(new Volume(-1000, 0, -500, 500, 500, Main.IDX_FLOOR_ROCK));
 
 		world.addAll(generateJumpChain(100, 
