@@ -19,28 +19,30 @@ public class Game {
 //	public static LegacyFontPainter font;
 
 	public static void initialize(){
-		world = new ArrayList<>();
-		world.add(new Volume(-50, 200, -100, 200, 200, Main.IDX_FLOOR_TECH));
-		world.add(new Volume(-50, 400, -100, 200, 200, Main.IDX_FLOOR_TECH));
-		world.add(new Volume(-100, 200, 100, 200, 200, Main.IDX_FLOOR_TECH2));
-		world.add(new Volume(-100, 600, -200, 200, 200, Main.IDX_FLOOR_TECH));
+//		world = new ArrayList<>();
+//		world.add(new Volume(-50, 200, -100, 200, 200, Main.IDX_FLOOR_TECH));
+//		world.add(new Volume(-50, 400, -100, 200, 200, Main.IDX_FLOOR_TECH));
+//		world.add(new Volume(-100, 200, 100, 200, 200, Main.IDX_FLOOR_TECH2));
+//		world.add(new Volume(-100, 600, -200, 200, 200, Main.IDX_FLOOR_TECH));
+//		
+//		world.add(new Volume(-700, 800, -200, 700, 700, Main.IDX_FLOOR_ROCK));
+//		
+//		world.add(new Volume(-50, 600, 600, 100, 200, Main.IDX_FLOOR_TECH));
+//		
+//		world.add(new Volume(-150, 800, 200, 200, 200, Main.IDX_FLOOR_TECH2));
+//		world.add(new Volume(-300, 600, 200, 200, 200, Main.IDX_FLOOR_TECH));
+//		
+//		world.add(new Volume(-225, 700, 400, 50, 50, Main.IDX_FLOOR_TECH));
+//
+//		for(float x = -1000; x < 1000; x += 200){
+//			for(float y = -1000; y < 1000; y += 200){
+//				world.add(new Volume(0, x, y, 200, 200, 
+//						Math.random() > 0.5 ? Main.IDX_FLOOR_ROCK : 
+//							Math.random() > 0.5 ? Main.IDX_FLOOR_ROCK2 : Main.IDX_FLOOR_TECH));
+//			}
+//		}
 		
-		world.add(new Volume(-700, 800, -200, 700, 700, Main.IDX_FLOOR_ROCK));
-		
-		world.add(new Volume(-50, 600, 600, 100, 200, Main.IDX_FLOOR_TECH));
-		
-		world.add(new Volume(-150, 800, 200, 200, 200, Main.IDX_FLOOR_TECH2));
-		world.add(new Volume(-300, 600, 200, 200, 200, Main.IDX_FLOOR_TECH));
-		
-		world.add(new Volume(-225, 700, 400, 50, 50, Main.IDX_FLOOR_TECH));
-
-		for(float x = -1000; x < 1000; x += 200){
-			for(float y = -1000; y < 1000; y += 200){
-				world.add(new Volume(0, x, y, 200, 200, 
-						Math.random() > 0.5 ? Main.IDX_FLOOR_ROCK : 
-							Math.random() > 0.5 ? Main.IDX_FLOOR_ROCK2 : Main.IDX_FLOOR_TECH));
-			}
-		}
+		world = World_ParkourLand1.createWorld();
 		
 //		font = new LegacyFontPainter(hvlTexture(Main.IDX_FONT), LegacyFontPainter.Preset.FP_AGOFFICIAL);
 		
